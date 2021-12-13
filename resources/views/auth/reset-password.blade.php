@@ -52,36 +52,35 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Login</div>
+                    <div class="card-header">Reset password</div>
                     <div class="card-body">
-                        <form action="{{ route('login') }}" method="POST">
+                        <form action="{{ route('password.update') }}" method="POST">
                             @csrf
+                            <input type="hidden" name="token" value="{{ $request->route('token') }}">
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
                                 <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" value="{{ old('email') }}" placeholder="email" required autofocus>
+                                    <input type="email" name="email" class="form-control" value="{{ $request->email }}" placeholder="email" required autofocus>
                                     @error('email') <div ><strong>{{ $message }}</strong></div> @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" name="password" required>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+                                    @error('password') <div> <strong>{{ $message }}</strong> </div> @enderror
                                 </div>
-                                @error('password') <div ><strong>{{ $message }}</strong></div> @enderror
                             </div>
                             <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm password">
+                                    @error('password') <div> <strong>{{ $message }}</strong> </div> @enderror
                                 </div>
                             </div>
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    Update
                                 </button>
                                 <a href="{{ route('forgot-password') }}" class="btn btn-link">
                                     Forgot Your Password?

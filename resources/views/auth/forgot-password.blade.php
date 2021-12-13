@@ -52,9 +52,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Login</div>
+                    <div class="card-header">Reset password</div>
+                    @if(session('status'))
+                        {{ session('status') }}
+                    @endif
                     <div class="card-body">
-                        <form action="{{ route('login') }}" method="POST">
+                        <form action="{{ route('password.request') }}" method="POST">
                             @csrf
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
@@ -63,25 +66,9 @@
                                     @error('email') <div ><strong>{{ $message }}</strong></div> @enderror
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                                @error('password') <div ><strong>{{ $message }}</strong></div> @enderror
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    Reset
                                 </button>
                                 <a href="{{ route('forgot-password') }}" class="btn btn-link">
                                     Forgot Your Password?
