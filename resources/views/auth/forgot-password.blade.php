@@ -70,7 +70,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Reset
                                 </button>
-                                <a href="#" class="btn btn-link">
+                                <a href="{{ route('forgot-password') }}" class="btn btn-link">
                                     Forgot Your Password?
                                 </a>
                             </div>
