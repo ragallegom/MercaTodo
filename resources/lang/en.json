@@ -15,5 +15,9 @@
     "password_confirm": "Confirm password",
     "update": "Update",
     "verify_email": "You must verify your email address, please check your email for a verification link.",
-    "resend_email": "Resend email"
+    "resend_email": "Resend email",
+    "edit_profile": "Edit profile",
+    "change_password": "Change password",
+    "current_password": "Current password",
+    "password_update_success": "Password update successfully"
 }

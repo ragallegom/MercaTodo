@@ -15,5 +15,9 @@
     "password_confirm": "Confirmar contraseña",
     "update": "Actualizar",
     "verify_email": "Debes verificar tu correo electrónico, por favor revisa el correo para el link de verificación.",
-    "resend_email": "Reenviar correo"
+    "resend_email": "Reenviar correo",
+    "edit_profile": "Editar perfil",
+    "change_password": "Cambiar contraseña",
+    "current_password": "Contraseña actual",
+    "password_update_success": "Contraseña actualizada satisfactoriamente"
 }

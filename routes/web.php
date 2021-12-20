@@ -22,8 +22,12 @@ Route::get('/home', function () {
    return view('home');
 })->middleware(['auth', 'verified']);
 
-Route::view('/profile/edit', function () {
+Route::get('/profile/edit', function () {
     return view('profile.edit');
+})->middleware('auth');
+
+Route::get('/profile/password', function () {
+    return view('profile.password');
 })->middleware('auth');
 
 Route::get('lang/{locale}', [Controller::class, 'setLanguage']);
