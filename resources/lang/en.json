@@ -1,0 +1,11 @@
+{
+    "email": "E-mail",
+    "password": "Password",
+    "forgot-password": "Forgot Your Password?",
+    "language": "Language",
+    "language_en": "English",
+    "language_es": "Spanish",
+    "login": "Login",
+    "register": "Register",
+    "remember_me": "Remember Me"
+}

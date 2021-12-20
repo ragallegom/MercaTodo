@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/home', function () {
    return view('home');
 })->middleware(['auth', 'verified']);
+
+Route::get('lang/{locale}', [Controller::class, 'setLanguage']);
