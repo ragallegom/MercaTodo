@@ -5,8 +5,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<!doctype html>
-<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,9 +21,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="#">Laravel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="#">MercaTodo</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,8 +34,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">{{__('register')}}</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <span class="caret">{{__('language')}}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="lang/en"><img width="25px"> {{__('language_en')}}</a>
+                        <a class="dropdown-item" href="lang/es"><img width="25px"> {{__('language_es')}}</a>
+                    </div>
+                </li>
             </ul>
-
         </div>
     </div>
 </nav>
@@ -75,4 +82,3 @@
 </main>
 
 </body>
-</html>

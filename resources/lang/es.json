@@ -12,5 +12,8 @@
     "reset": "Resetear",
     "name": "Nombre",
     "email_address": "Correo electrónico",
-    "password_confirm": "Confirmar contraseña"
+    "password_confirm": "Confirmar contraseña",
+    "update": "Actualizar",
+    "verify_email": "Debes verificar tu correo electrónico, por favor revisa el correo para el link de verificación.",
+    "resend_email": "Reenviar correo"
 }
