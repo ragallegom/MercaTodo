@@ -1,0 +1,11 @@
+{
+    "email": "E-mail",
+    "password": "Contraseña",
+    "forgot-password": "Olvido su contraseña?",
+    "language": "Idioma",
+    "language_en": "Ingles",
+    "language_es": "Español",
+    "login": "Autenticar",
+    "register": "Registrar",
+    "remember_me": "Recordarme"
+}

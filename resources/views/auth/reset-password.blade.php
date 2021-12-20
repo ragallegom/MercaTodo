@@ -82,9 +82,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Update
                                 </button>
-                                <a href="{{ route('forgot-password') }}" class="btn btn-link">
-                                    Forgot Your Password?
-                                </a>
+{{--                                <a href="{{ route('forgot-password') }}" class="btn btn-link">--}}
+{{--                                    Forgot Your Password?--}}
+{{--                                </a>--}}
                             </div>
                         </form>
                     </div>
