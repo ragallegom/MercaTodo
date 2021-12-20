@@ -19,5 +19,7 @@
     "edit_profile": "Edit profile",
     "change_password": "Change password",
     "current_password": "Current password",
-    "password_update_success": "Password update successfully"
+    "password_update_success": "Password update successfully",
+    "logout": "Logout",
+    "disable": "Disable"
 }
