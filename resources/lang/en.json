@@ -9,5 +9,8 @@
     "register": "Register",
     "remember_me": "Remember Me",
     "reset_password": "Reset password",
-    "reset": "Reset"
+    "reset": "Reset",
+    "name": "Name",
+    "email_address": "E-Mail Address",
+    "password_confirm": "Confirm password"
 }

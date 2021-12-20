@@ -9,5 +9,8 @@
     "register": "Registrar",
     "remember_me": "Recordarme",
     "reset_password": "Resetear contraseña",
-    "reset": "Resetear"
+    "reset": "Resetear",
+    "name": "Nombre",
+    "email_address": "Correo electrónico",
+    "password_confirm": "Confirmar contraseña"
 }
