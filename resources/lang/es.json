@@ -7,5 +7,13 @@
     "language_es": "Español",
     "login": "Autenticar",
     "register": "Registrar",
-    "remember_me": "Recordarme"
+    "remember_me": "Recordarme",
+    "reset_password": "Resetear contraseña",
+    "reset": "Resetear",
+    "name": "Nombre",
+    "email_address": "Correo electrónico",
+    "password_confirm": "Confirmar contraseña",
+    "update": "Actualizar",
+    "verify_email": "Debes verificar tu correo electrónico, por favor revisa el correo para el link de verificación.",
+    "resend_email": "Reenviar correo"
 }

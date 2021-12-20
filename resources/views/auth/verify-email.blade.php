@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<!doctype html>
-<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,34 +14,35 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="icon" href="Favicon.png">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
     <title>Laravel</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="#">Laravel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="#">Mercatodo</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{__('login')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link" href="{{ route('register') }}">{{__('register')}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <span class="caret">{{__('language')}}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="lang/en"><img width="25px"> {{__('language_en')}}</a>
+                        <a class="dropdown-item" href="lang/es"><img width="25px"> {{__('language_es')}}</a>
+                    </div>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
@@ -55,13 +55,13 @@
                     @if(session('status'))
                         {{ session('status') }}
                     @endif
-                    <div class="card-header">You must verify your email address, please check your email for a verification link.</div>
+                    <div class="card-header">{{__('verify_email')}}</div>
                     <div class="card-body">
                         <form action="{{ route('verification.send') }}" method="POST">
                             @csrf
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Resend email
+                                    {{__('resend_email')}}
                                 </button>
                             </div>
                         </form>
@@ -73,4 +73,3 @@
 </main>
 
 </body>
-</html>
