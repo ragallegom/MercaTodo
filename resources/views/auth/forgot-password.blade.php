@@ -15,13 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="css/style.css">
-
     <link rel="icon" href="Favicon.png">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
     <title>Laravel</title>
 </head>
@@ -37,10 +31,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{__('login')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link" href="{{ route('register') }}">{{__('register')}}</a>
                 </li>
             </ul>
 
@@ -53,7 +47,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Reset password</div>
+                    <div class="card-header">{{__('reset_password')}}</div>
                     @if(session('status'))
                         {{ session('status') }}
                     @endif
@@ -69,7 +63,7 @@
                             </div>
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Reset
+                                    {{__('reset')}}
                                 </button>
                             </div>
                         </form>

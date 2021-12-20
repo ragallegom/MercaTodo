@@ -7,5 +7,7 @@
     "language_es": "Español",
     "login": "Autenticar",
     "register": "Registrar",
-    "remember_me": "Recordarme"
+    "remember_me": "Recordarme",
+    "reset_password": "Resetear contraseña",
+    "reset": "Resetear"
 }
