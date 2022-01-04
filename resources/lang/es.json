@@ -21,5 +21,6 @@
     "current_password": "Contraseña actual",
     "password_update_success": "Contraseña actualizada satisfactoriamente",
     "logout": "Salir",
-    "disable": "Deshabilitado"
+    "disable": "Deshabilitado",
+    "auth_blocked": "Cuenta bloqueada"
 }

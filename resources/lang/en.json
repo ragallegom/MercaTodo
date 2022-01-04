@@ -21,5 +21,6 @@
     "current_password": "Current password",
     "password_update_success": "Password update successfully",
     "logout": "Logout",
-    "disable": "Disable"
+    "disable": "Disable",
+    "auth_blocked": "Account blocked"
 }

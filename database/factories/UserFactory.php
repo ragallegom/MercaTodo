@@ -28,11 +28,29 @@ class UserFactory extends Factory
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function unverified()
+    public function unverified(): Factory
     {
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    public function disabled(): Factory
+    {
+        return $this->state(function () {
+            return [
+                'disable_at' => now(),
+            ];
+        });
+    }
+
+    public function enabled(): Factory
+    {
+        return $this->state(function (){
+            return [
+                'disable_at' => null,
             ];
         });
     }
