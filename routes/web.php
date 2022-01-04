@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Controller;
+use \App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-   return view('home');
-})->middleware(['auth', 'verified']);
+Route::get('/home', [UserController::class, 'index']
+)->middleware(['auth', 'verified']);
 
 Route::get('/profile/edit', function () {
     return view('profile.edit');
@@ -31,3 +31,6 @@ Route::get('/profile/password', function () {
 })->middleware('auth');
 
 Route::get('lang/{locale}', [Controller::class, 'setLanguage']);
+
+Route::get('/users', [UserController::class, 'index']);
+

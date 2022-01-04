@@ -19,5 +19,8 @@
     "edit_profile": "Editar perfil",
     "change_password": "Cambiar contraseña",
     "current_password": "Contraseña actual",
-    "password_update_success": "Contraseña actualizada satisfactoriamente"
+    "password_update_success": "Contraseña actualizada satisfactoriamente",
+    "logout": "Salir",
+    "disable": "Deshabilitado",
+    "auth_blocked": "Cuenta bloqueada"
 }
