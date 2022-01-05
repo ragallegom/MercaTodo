@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Controller;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,10 @@ Route::get('/profile/password', function () {
 Route::get('lang/{locale}', [Controller::class, 'setLanguage']);
 
 Route::get('/users', [UserController::class, 'index']);
+
+Route::resource('store/category', CategoryController::class)
+    ->name('index', 'category.index')
+    ->name('edit', 'category.edit')
+    ->name('update', 'category.update')
+    ->name('destroy', 'category.delete');
 

@@ -54,7 +54,6 @@
                     @if(session('status'))
                         {{ session('status') }}
                     @endif
-                    @includeWhen(session()->has('disabled'), 'auth.user_blocked')
                     <div class="card-header">{{__('login')}}</div>
                     <div class="card-body">
                         <form action="{{ route('login') }}" method="POST">
