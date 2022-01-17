@@ -13,6 +13,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name', 120);
             $table->string('description', 255);
             $table->string('price', 50);
+            $table->string('image', 255)->nullable();
             $table->timestamp('disabled_at')->nullable();
             $table->timestamps();
         });
