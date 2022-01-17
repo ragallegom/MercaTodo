@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Controller;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\CategoryController;
+use \App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,4 @@ Route::resource('store/category', CategoryController::class)
     ->name('update', 'category.update')
     ->name('destroy', 'category.delete');
 
+Route::resource('store/product', ProductController::class);
