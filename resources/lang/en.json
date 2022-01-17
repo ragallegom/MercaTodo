@@ -47,7 +47,7 @@
     "category_index_options": "Options",
     "category_index_yes": "Yes",
     "category_index_no": "No",
-    "category_nav": "Product",
+    "category_nav": "Admin",
     "category_create_disabled": "Disabled",
     "category_upload_file": "Upload image",
     "category_index_image": "Image",
@@ -56,5 +56,15 @@
     "search_products_description": "Description",
     "search_products_range_price_min": "Min price",
     "search_products_value_price": "Value",
-    "search_products_range_price_max": "Max price"
+    "search_products_range_price_max": "Max price",
+    "category_add_button": "Add product",
+    "product_nav": "Products",
+    "shopping_nav": "Shopping Cart",
+    "list_shopping": "Shopping Cart",
+    "shopping_action": "Action",
+    "shopping_reduce_by_one": "Reduce by 1",
+    "shopping_reduce_all": "Reduce all",
+    "shopping_total": "Total",
+    "shopping_checkout": "Checkout",
+    "shopping_no_items": "No Items in Cart!"
 }
