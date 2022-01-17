@@ -36,19 +36,33 @@ class CategoryController extends Controller
         $category->description = $categoryFormRequest->get('description');
         $category->price = $categoryFormRequest->get('price');
         $category->disabled_at = null;
+
+        if ($categoryFormRequest->hasFile('image'))
+        {
+            $destination_path = 'public/images/products';
+            $image = $categoryFormRequest->file('image');
+            $image_name = $image->getClientOriginalName();
+            $path = $categoryFormRequest->file('image')->storeAs($destination_path, $image_name);
+
+            $category->image = $image_name;
+        }
+
         $category->save();
 
         return redirect::to('store/category');
     }
 
-    public function show($id): View
+    public function show(string $id): View
     {
         return view('store.category.show', ['category' => Category::findOrFail($id)]);
     }
 
-    public function edit($id): View
+    public function edit(string $id): View
     {
-        return view('store.category.edit', ['category' => Category::findOrFail($id)]);
+        $category = Category::findOrFail($id);
+        $category->disabled = (bool)$category->disabled_at;
+
+        return view('store.category.edit', ['category' => $category]);
     }
 
     public function update(CategoryFormRequest $categoryFormRequest, $id): RedirectResponse
@@ -66,7 +80,7 @@ class CategoryController extends Controller
         return redirect::to('store/category');
     }
 
-    public function destroy($id): RedirectResponse
+    public function destroy(string $id): RedirectResponse
     {
         $category = Category::findOrFail($id);
         $category->disabled_at = now();
