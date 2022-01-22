@@ -42,4 +42,13 @@ Route::resource('store/category', CategoryController::class)
     ->name('update', 'category.update')
     ->name('destroy', 'category.delete');
 
-Route::resource('store/product', ProductController::class);
+Route::resource('store/product', ProductController::class)
+    ->name('index', 'products.index');
+
+Route::get('add-to-cart/{id}', [ProductController::class, 'getAddToCart'])->name('product.addToCart');
+
+Route::get('shopping-cart', [ProductController::class, 'getCart'])->name('product.shoppingCart');
+
+Route::get('checkout', [ProductController::class, 'getCheckout'])->name('product.checkout');
+
+Route::post('checkout', [ProductController::class, 'postCheckout']);

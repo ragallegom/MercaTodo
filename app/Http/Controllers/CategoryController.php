@@ -39,7 +39,7 @@ class CategoryController extends Controller
 
         if ($categoryFormRequest->hasFile('image'))
         {
-            $destination_path = 'public/images/products';
+            $destination_path = config('app.upload_image') . '/products';
             $image = $categoryFormRequest->file('image');
             $image_name = $image->getClientOriginalName();
             $path = $categoryFormRequest->file('image')->storeAs($destination_path, $image_name);
@@ -70,11 +70,23 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->name = $categoryFormRequest->get('name');
         $category->description = $categoryFormRequest->get('description');
+
         if ($categoryFormRequest->get('disabled') == null) {
             $category->disabled_at = null;
         } else {
             $category->disabled_at = now();
         }
+
+        if ($categoryFormRequest->hasFile('image'))
+        {
+            $destination_path = config('app.upload_image') . '/products';
+            $image = $categoryFormRequest->file('image');
+            $image_name = $image->getClientOriginalName();
+            $path = $categoryFormRequest->file('image')->storeAs($destination_path, $image_name);
+
+            $category->image = $image_name;
+        }
+
         $category->save();
 
         return redirect::to('store/category');

@@ -16,6 +16,7 @@
                         <th>{{__('category_index_description')}}</th>
                         <th>{{__('category_index_image')}}</th>
                         <th>{{__('category_index_price')}}</th>
+                        <th>{{__('category_index_options')}}</th>
                     </thead>
                     @foreach($categories as $category)
                         <tr>
@@ -27,6 +28,9 @@
                                 @endif
                             </td>
                             <td>{{ $category->price }}</td>
+                            <td>
+                                <a href="{{ route('product.addToCart', $category->id) }}"><button class="btn btn-info">{{__('category_add_button')}}</button></a>
+                            </td>
                         </tr>
                     @endforeach
                 </table>

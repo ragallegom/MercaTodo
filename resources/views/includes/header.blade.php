@@ -8,6 +8,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('category.index') }}">{{__('category_nav')}}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('products.index') }}">{{__('product_nav')}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('product.shoppingCart') }}">{{__('shopping_nav')}}
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                            </a>
+                        </li>
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{__('login')}}</a>
