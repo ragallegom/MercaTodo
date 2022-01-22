@@ -15,6 +15,7 @@
                         <th>{{__('category_index_id')}}</th>
                         <th>{{__('category_index_name')}}</th>
                         <th>{{__('category_index_description')}}</th>
+                        <th>{{__('category_index_image')}}</th>
                         <th>{{__('category_index_disabled')}}</th>
                         <th>{{__('category_index_options')}}</th>
                     </thead>
@@ -23,6 +24,10 @@
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->description }}</td>
+                            <td>
+                                @if($category->image)
+                                    <image height="100px" src="{{ asset('/storage/images/products/' . $category->image) }}" /></td>
+                                @endif
                             <th>
                                 @if( $category->disabled_at == null)
                                     {{__('category_index_no')}}

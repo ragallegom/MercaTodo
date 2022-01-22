@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="disabled" class="checkbox">
-                        <input type="checkbox" name="disabled" class="form-control">
+                    <input type="checkbox" name="disabled" class="form-control" @if ($category->disabled) checked @endif>
                         {{__('category_create_disabled')}}
                     </label>
                 </div>
