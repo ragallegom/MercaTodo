@@ -16,7 +16,8 @@ class CategoryFormRequest extends FormRequest
         return [
             'name' => 'required|max:50',
             'description' => 'max:255',
-            'price' => 'required|max:50'
+            'price' => 'required|integer|min:1',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 }
