@@ -17,19 +17,19 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">{{__('category_create_name')}}</label>
-                    <input type="text" name="name" class="form-control" placeholder="{{__('category_create_name')}}" autofocus>
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="{{__('category_create_name')}}" autofocus>
                 </div>
                 <div class="form-group">
                     <label for="description">{{__('category_create_description')}}</label>
-                    <input type="text" name="description" class="form-control" placeholder="{{__('category_create_description')}}">
+                    <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}" placeholder="{{__('category_create_description')}}">
                 </div>
                 <div class="form-group">
                     <label for="price">{{__('category_create_price')}}</label>
-                    <input type="text" name="price" class="form-control" placeholder="{{__('category_create_price')}}">
+                    <input type="text" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('price') }}" placeholder="{{__('category_create_price')}}">
                 </div>
                 <div class="form-group">
                     <label for="formFile" class="form-label">{{__('category_upload_file')}}</label>
-                    <input class="form-control" name="image" type="file" id="formFile">
+                    <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="formFile">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">{{__('category_create_submit')}}</button>
