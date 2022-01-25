@@ -27,7 +27,7 @@
                                     <image height="100px" src="{{ asset('/storage/images/products/' . $category->image) }}" />
                                 @endif
                             </td>
-                            <td>{{ $category->price }}</td>
+                            <td>${{ number_format($category->price) }}</td>
                             <td>
                                 <a href="{{ route('product.addToCart', $category->id) }}"><button class="btn btn-info">{{__('category_add_button')}}</button></a>
                             </td>
