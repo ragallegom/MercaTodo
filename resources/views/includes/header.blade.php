@@ -14,7 +14,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('product.shoppingCart') }}">{{__('shopping_nav')}}
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                                <span class="badge badge-pill badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
                             </a>
                         </li>
                     @else
