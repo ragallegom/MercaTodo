@@ -21,12 +21,12 @@
     <div class="row">
         <div class="col-6">
             <label for="rangeMinPrice" class="form-label">{{__('search_products_range_price_min')}}</label>
-            <input type="range" class="form-range" min="0" max="1000000" id="rangeMinPrice" name="searchRangeMin" value="{{ $searchRangeMin }}">
+            <input type="range" class="form-range" min="0" max="1000000" id="rangeMinPrice" name="searchRangeMin" value="{{ $searchRangeMin ? $searchRangeMin : 0 }}">
             <p>{{__('search_products_value_price')}}: <span id="valueMinPrice"></span></p>
         </div>
         <div class="col-6">
             <label for="rangeMaxPrice" class="form-label">{{__('search_products_range_price_max')}}</label>
-            <input type="range" class="form-range" min="0" max="1000000" id="rangeMaxPrice" name="searchRangeMax" value="{{ $searchRangeMax }}">
+            <input type="range" class="form-range" min="0" max="1000000" id="rangeMaxPrice" name="searchRangeMax" value="{{ $searchRangeMax ? $searchRangeMax : 1000000 }}">
             <p>{{__('search_products_value_price')}}: <span id="valueMaxPrice"></span></p>
         </div>
     </div>
