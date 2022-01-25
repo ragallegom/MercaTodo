@@ -47,6 +47,9 @@ Route::resource('store/product', ProductController::class)
 
 Route::get('add-to-cart/{id}', [ProductController::class, 'getAddToCart'])->name('product.addToCart');
 
+Route::get('increase-product/{id}', [ProductController::class, 'getIncreaseProductShopping'])->name('product.increaseProduct');
+Route::get('decrease-product/{id}', [ProductController::class, 'getDecreaseProductShopping'])->name('product.decreaseProduct');
+
 Route::get('shopping-cart', [ProductController::class, 'getCart'])->name('product.shoppingCart');
 
 Route::get('checkout', [ProductController::class, 'getCheckout'])->name('product.checkout');
