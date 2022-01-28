@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\CategoryFormRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -75,6 +76,7 @@ class CategoryController extends Controller
             $category->disabled_at = null;
         } else {
             $category->disabled_at = now();
+            Log::info('Product disable: ', ['id' => $category->id]);
         }
 
         if ($categoryFormRequest->hasFile('image'))
