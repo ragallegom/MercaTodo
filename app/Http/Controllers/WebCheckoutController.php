@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use App\Http\Requests\WebCheckoutPostRequest;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\WebCheckout;
 use Illuminate\View\View;
@@ -145,7 +146,6 @@ class WebCheckoutController extends Controller
             ->post('https://dev.placetopay.com/redirection/api/session/'.$checkout->request_id, $postData);
 
         $responseData = $response->json();
-
         $checkout->status = $responseData['status']['status'];
         $checkout->message = $responseData['status']['message'];
         $checkout->save();
@@ -260,5 +260,48 @@ class WebCheckoutController extends Controller
 
         $newCheckout->save();
         return redirect()->route('product.checkout');
+    }
+
+    public static function jobConsultRequest(): void
+    {
+        $checkouts = DB::table('web_checkouts')
+            ->where('status', '=', 'PENDING')->get();
+
+        $login = '6dd490faf9cb87a9862245da41170ff2';
+        $seed = date('c');
+        if (function_exists('random_bytes')) {
+            $nonce = bin2hex(random_bytes(16));
+        } elseif (function_exists('openssl_random_pseudo_bytes')) {
+            $nonce = bin2hex(openssl_random_pseudo_bytes(16));
+        } else {
+            $nonce = mt_rand();
+        }
+        $nonceBase64 = base64_encode($nonce);
+        $secretKey = '024h1IlD';
+        $tranKey = base64_encode(sha1($nonce . $seed . $secretKey, true));
+
+        $postData = [
+            "auth" => [
+                "login" => $login,
+                "tranKey" => $tranKey,
+                "nonce" => $nonceBase64,
+                "seed" => $seed
+            ],
+        ];
+
+        foreach ($checkouts as $checkout)
+        {
+            $response = Http::withHeaders([
+                'Content-Type' => 'application/json'
+            ])->timeout(30)
+                ->post('https://dev.placetopay.com/redirection/api/session/'.$checkout->request_id, $postData);
+
+            $responseData = $response->json();
+            Log::info('Consult Request: ', ['id' => $checkout->id]);
+            $updateCheckout = WebCheckout::where('reference', '=', $checkout->reference)->firstOrFail();
+            $updateCheckout->status = $responseData['status']['status'];
+            $updateCheckout->message = $responseData['status']['message'];
+            $updateCheckout->save();
+        }
     }
 }
