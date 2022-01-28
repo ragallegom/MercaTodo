@@ -17,6 +17,9 @@
                                 <span class="badge badge-pill badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('checkout.index') }}">{{__('checkout_nav')}}</a>
+                        </li>
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{__('login')}}</a>
