@@ -5,6 +5,7 @@ use \App\Http\Controllers\Controller;
 use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\CategoryController;
 use \App\Http\Controllers\ProductController;
+use \App\Http\Controllers\WebCheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +55,11 @@ Route::get('shopping-cart', [ProductController::class, 'getCart'])->name('produc
 
 Route::get('checkout', [ProductController::class, 'getCheckout'])->name('product.checkout');
 
-Route::post('checkout', [ProductController::class, 'postCheckout']);
+Route::post('checkout', [WebCheckoutController::class, 'createRequest'])->name('request.checkout');
+
+Route::get('checkout_request/{id}', [WebCheckoutController::class, 'consultRequest'])->name('consult.checkout');
+
+Route::resource('checkout/index', WebCheckoutController::class)
+    ->name('index', 'checkout.index');
+
+Route::get('retry_request/{id}', [WebCheckoutController::class, 'retryRequest'])->name('retry.checkout');
